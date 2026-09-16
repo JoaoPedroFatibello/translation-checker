@@ -3,7 +3,6 @@ import scipy.io.wavfile as wav
 import speech_recognition as sr
 from googletrans import Translator
 import random
-import asyncio
 
 duration = 5
 sample_rate = 44100
@@ -51,8 +50,8 @@ while True:
         text = recognizer.recognize_google(audio, language=lang).lower()
         print("Você disse:", text)
 
-        translated = asyncio.run(translator.translate(text, dest="pt"))
-        print("Tradução:", translated.text)
+        translator = Translator()
+        translated = translator.translate(text, dest='pt')
 
         if translated.text.lower() == word:
 
@@ -102,6 +101,7 @@ while True:
 
     except sr.UnknownValueError:
         print("A fala não pôde ser reconhecida.")
+        break
 
     except sr.RequestError as e:
         print(f"Erro do serviço: {e}")
