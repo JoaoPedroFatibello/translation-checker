@@ -4,13 +4,13 @@ import speech_recognition as sr
 from googletrans import Translator
 import random
 
-duration = 5
+duration = 3
 sample_rate = 44100
 
 words_by_level = {
-    "fácil": ["gato", "cachorro", "maçã", "leite", "sol"],
-    "médio": ["casa", "escola", "amigo", "janela", "amarelo"],
-    "difícil": ["tecnologia", "universidade", "informação", "pronúncia", "imaginação"]
+    "fácil": ["gato", "cachorro", "maçã", "leite", "sol", "lua"],
+    "médio": ["casa", "escola", "amigo", "janela", "amarelo", "vermelho"],
+    "difícil": ["tecnologia", "universidade", "informação", "pronúncia", "imaginação", "criação"]
 }
 
 lang = input("Para qual idioma devo traduzir? (ex: en, es): ")
